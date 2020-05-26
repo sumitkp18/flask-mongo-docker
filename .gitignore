@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+#virtual env, environment config
+flask_env
+.env
+
+#IDE: pyCharm, VSCode
+.idea
+.vscode

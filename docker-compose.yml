@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask_auth_app
+    image: flask_auth_app:initial_build
+    environment:
+      MONGODB_NAME: flask_app_db
+      MONGODB_HOST: mongodb_auth
+    ports:
+       - "5000:5000"
+    depends_on:
+      - mongodb_auth
+    links:
+      - mongodb_auth
+
+  mongodb_auth:
+    container_name: flask_app_db
+    image: mongo:4.0.8
+    environment:
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+
+volumes:
+  mongodbdata:
+    driver: local
