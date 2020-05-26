@@ -4,7 +4,7 @@
 
 ## SETUP instructions for docker
 ### (for non-docker env follow the next setup instruction for python virtual env)
-1. create a file in root directory (recruitment_be/) with name: ".env"
+1. create a file in root directory (flask_mongo_docker/) with name: ".env"
     >$touch .env
 2. add the following keys to the ".env" file
 	>JWT_SECRET_KEY='jwt_secret_key'
